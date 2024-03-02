@@ -33,7 +33,6 @@ function reset() {
         document.getElementById(id).style.border = "3px solid white";
         document.getElementById(id).style.color = "black";
     }
-
     currentRow = 1;
     currentCol = 1;
     won = false;
@@ -126,11 +125,14 @@ function deleteLetter() {
         document.getElementById(id).style.borderColor = "#D4D6DA";
     }
 }
-function enter() {
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+//function enter() {
+const enter = async () => {
     if (currentCol == 6) {
         id = "row" + currentRow.toString() + "col";
         for (var i = 1; i <= 5; i++) {
-            document.getElementById(id+i).style.border = "none";
+            // time
             if (document.getElementById(id+i).innerHTML == currentWord.charAt(i-1)){
                 correct(id+i);
             } else if (checkWrongLocation(id,i)) {
@@ -138,6 +140,7 @@ function enter() {
             } else {
                 wrong(id+i);
             }
+            await sleep(225)
         }
         won = checkWin();
         if (won == true) {
@@ -161,26 +164,27 @@ function checkWrongLocation(id, currentCol) {
             returnVal = true;
             break;
         }
-
     }
     return returnVal;
 }
 function correct(id) {
     document.getElementById(id).style.backgroundColor='#6AAB64'; // green
     document.getElementById(id).style.color='white';
+    document.getElementById(id).style.borderColor = '#6AAB64';
     document.getElementById(document.getElementById(id).innerHTML).style.backgroundColor = '#6AAB64';
     document.getElementById(document.getElementById(id).innerHTML).style.color = 'white';
-
 }
 function wrongLocation(id) {
     document.getElementById(id).style.backgroundColor='#C9B458'; // yellow
     document.getElementById(id).style.color='white';
+    document.getElementById(id).style.borderColor = '#C9B458';
     document.getElementById(document.getElementById(id).innerHTML).style.backgroundColor = '#C9B458';
     document.getElementById(document.getElementById(id).innerHTML).style.color = 'white';
 }
 function wrong(id) {
     document.getElementById(id).style.backgroundColor='#787C7E'; // dark grey
     document.getElementById(id).style.color='white';
+    document.getElementById(id).style.borderColor = '#787C7E';
     document.getElementById(document.getElementById(id).innerHTML).style.backgroundColor = '#787C7E';
     document.getElementById(document.getElementById(id).innerHTML).style.color = 'white';
 }
