@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Your Own Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1 id="but" onclick="getWord()"> WORDLE </h1>
+        <table id="guesses">
+            <tr>
+                <td id="row1col1"></td>
+                <td id="row1col2"></td>
+                <td id="row1col3"></td>
+                <td id="row1col4"></td>
+                <td id="row1col5"></td>
+            </tr>
+            <tr>
+                <td id="row2col1"></td>
+                <td id="row2col2"></td>
+                <td id="row2col3"></td>
+                <td id="row2col4"></td>
+                <td id="row2col5"></td>
+            </tr>
+            <tr>
+                <td id="row3col1"></td>
+                <td id="row3col2"></td>
+                <td id="row3col3"></td>
+                <td id="row3col4"></td>
+                <td id="row3col5"></td>
+            </tr>
+            <tr>
+                <td id="row4col1"></td>
+                <td id="row4col2"></td>
+                <td id="row4col3"></td>
+                <td id="row4col4"></td>
+                <td id="row4col5"></td>
+            </tr>
+            <tr>
+                <td id="row5col1"></td>
+                <td id="row5col2"></td>
+                <td id="row5col3"></td>
+                <td id="row5col4"></td>
+                <td id="row5col5"></td>
+            </tr>
+            <tr>
+                <td id="row6col1"></td>
+                <td id="row6col2"></td>
+                <td id="row6col3"></td>
+                <td id="row6col4"></td>
+                <td id="row6col5"></td>
+            </tr>
+        </table>
+        <!-- Keyboard -->
+        <table class = "keyboard" id = "row1">
+            <tr>
+                <td id = "Q" onclick="letter('Q')"> Q </td>
+                <td id = "W" onclick="letter('W')"> W </td>
+                <td id = "E" onclick="letter('E')"> E </td>
+                <td id = "R" onclick="letter('R')"> R </td>
+                <td id = "T" onclick="letter('T')"> T </td>
+                <td id = "Y" onclick="letter('Y')"> Y </td>
+                <td id = "U" onclick="letter('U')"> U </td>
+                <td id = "I" onclick="letter('I')"> I </td>
+                <td id = "O" onclick="letter('O')"> O </td>
+                <td id = "P" onclick="letter('P')"> P </td>
+            </tr>
+        </table>
+        <table class = "keyboard" id = "row2">
+            <tr>
+                <td id = "A" onclick="letter('A')"> A </td>
+                <td id = "S" onclick="letter('S')"> S </td>
+                <td id = "D" onclick="letter('D')"> D </td>
+                <td id = "F" onclick="letter('F')"> F </td>
+                <td id = "G" onclick="letter('G')"> G </td>
+                <td id = "H" onclick="letter('H')"> H </td>
+                <td id = "J" onclick="letter('J')"> J </td>
+                <td id = "K" onclick="letter('K')"> K </td>
+                <td id = "L" onclick="letter('L')"> L </td>
+            </tr>
+        </table>
+        <table class = "keyboard" id = "row3">
+            <tr>
+                <td onclick="enter()" class="biggerButton"> Enter </td>
+                <td id = "Z" onclick="letter('Z')"> Z </td>
+                <td id = "X" onclick="letter('X')"> X </td>
+                <td id = "C" onclick="letter('C')"> C </td>
+                <td id = "V" onclick="letter('V')"> V </td>
+                <td id = "B" onclick="letter('B')"> B </td>
+                <td id = "N" onclick="letter('N')"> N </td>
+                <td id = "M" onclick="letter('M')"> M </td>
+                <td onclick="deleteLetter()" class="biggerButton"> del </td>
+            </tr>
+        </table>
+    </main>
+<script src="script.js"> </script>
+</body>
+</html>
